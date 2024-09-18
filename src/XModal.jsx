@@ -39,11 +39,6 @@ export default function Modal() {
 
     const { username, email, phone, dob } = formData;
 
-    if (!username || !email || !phone || !dob) {
-      setError("All fields are required.");
-      return;
-    }
-
     if (!validateDob(dob)) {
       alert("Invalid date of birth. Date of birth cannot be in the future.");
       return;
@@ -84,6 +79,7 @@ export default function Modal() {
                   id="username"
                   value={formData.username}
                   onChange={handleChange}
+                  required
                 />
               </div>
               <div>
@@ -93,6 +89,7 @@ export default function Modal() {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -103,6 +100,7 @@ export default function Modal() {
                   id="phone"
                   value={formData.phone}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -113,6 +111,7 @@ export default function Modal() {
                   id="dob"
                   value={formData.dob}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
